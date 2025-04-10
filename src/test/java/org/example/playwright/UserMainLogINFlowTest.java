@@ -1,6 +1,7 @@
 package org.example.playwright;
 
 import com.microsoft.playwright.options.Cookie;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import java.util.List;
 
@@ -22,24 +23,39 @@ public class UserMainLogINFlowTest extends BaseTest {
             loginPage = new LoginPage(page);
         }
         loginPage.logInOfNewUser();
-        CookieUtils.saveCookies(page, "cookies.json");
+
+        // Debug: Verify successful login before saving cookies
+        boolean isLoginSuccess = page.locator("xpath=//a[@href='/account' and @title='Account']").isVisible();
+        if (isLoginSuccess) {
+            System.out.println("Login successful, saving cookies...");
+            CookieUtils.saveCookies(page, "cookies.json");
+        } else {
+            System.err.println("Login failed. Cookies will not be saved.");
+        }
     }
 
     @Test(priority = 3)
     public void goToAccountDetailsPage() {
-        //     Load cookies into the browser context
-        if (accountDetails == null) {
-            accountDetails = new AccountDetails(page);
-        }
-        CookieUtils.loadCookies(page, "cookies.json");
-
-        // Perform verification: Ensure cookies are loaded
+        CookieUtils.loadCookies(page);
+        // Verify that cookies are applied
         List<Cookie> loadedCookies = page.context().cookies();
         System.out.println("Loaded cookies: ");
         for (Cookie cookie : loadedCookies) {
             System.out.println("- " + cookie.name + "=" + cookie.value);
         }
 
-        accountDetails.checkAccountDetails();
+        // Navigate to Account Details
+        navigateTo("https://www.neweracap.com/account");
+        if (accountDetails == null) {
+            accountDetails = new AccountDetails(page);
+        }
+
+        accountDetails.checkAccountDetails(); // Ensure this method performs necessary checks
+    }
+
+    @AfterMethod
+    public void clearCookies() {
+        page.context().clearCookies();
+        System.out.println("Cookies cleared after the test.");
     }
 }

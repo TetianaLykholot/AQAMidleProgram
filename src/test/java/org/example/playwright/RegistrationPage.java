@@ -26,7 +26,9 @@ public class RegistrationPage {
     }
 
     private void enterEmail() {
-        registrationPage.locator(email).fill("testli@yopmail.com");
+        String uniqueEmail = "testli_" + System.currentTimeMillis() + "@yopmail.com";
+        System.out.println("Generated Email: " + uniqueEmail);
+        registrationPage.locator(email).fill(uniqueEmail);
     }
 
     private void setDateOfBirth() {
