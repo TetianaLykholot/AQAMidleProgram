@@ -60,6 +60,11 @@
       <version>1.18.36</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.5.0</version> <!-- Check for latest version -->
+    </dependency>
   </dependencies>
   <build>
     <plugins>
