@@ -1,16 +1,19 @@
 package org.seleniumTask;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
 
-public class NewEraLoginTest extends NewEraBaseTest{
-    LogInPage loginPage = new LogInPage();
+import java.io.IOException;
+
+public class NewEraLoginTest extends LogInPage{
+
+
 
     @Test
-    public void loginTest(){
-        setUp();
-        loginPage.login();
-        closeDriver();
-
+    public void testValidLogin()  {
+        // Pass the driver from BaseTest to LoginPage
+        login();
     }
 
 }

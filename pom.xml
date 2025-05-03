@@ -12,23 +12,22 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <selenium.version>4.31.0</selenium.version>
+      <testng.version>7.7.1</testng.version>
+      <junit.version>4.13.2</junit.version>
+
   </properties>
 
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>org.seleniumhq.selenium</groupId>-->
-<!--      <artifactId>selenium-java</artifactId>-->
-<!--      <version>4.31.0</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>3.141.0</version>
+        <version>${selenium.version}</version>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.1.0</version>
+      <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -40,7 +39,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
-      <scope>test</scope>
+      <scope>${junit.version}</scope>
     </dependency>
   </dependencies>
 </project>

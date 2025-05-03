@@ -1,25 +1,45 @@
 package org.seleniumTask;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
-public class LogInPage {
+import java.io.IOException;
+
+public class LogInPage extends NewEraBaseTest   {
+
+    private By emailField = By.id("CustomerEmail"); // Replace with correct locator
+//    private By passwordField = By.id("CustomerPassword"); // Replace with correct locator
+    private By loginButton = By.className("login-page__sign-in-button"); // Replace with correct locator
 
 
-    @FindBy(id = "CustomerEmail")
-    WebElement emailField ;
 
-    @FindBy(id = "CustomerPassword")
-    WebElement passwordField ;
+    public void LogInPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    @FindBy(className = "login-page__sign-in-button")
-    WebElement loginButton;
+    public void enterEmail() {
+        driver.findElement(emailField).sendKeys("testli@yopmail.com");
+    }
+
+    public void enterPassword() {
+        WebElement passwordField = driver.findElement(
+                RelativeLocator.with(By.tagName("input")).below(emailField));
+        passwordField.sendKeys("Test123!");
+    }
+
+    public void clickLogin() {
+        driver.findElement(loginButton).click();
+    }
+
 
 
     public void login(){
-        emailField.sendKeys("testli@yopmail.com");
-        passwordField.sendKeys("Test123!");
-        loginButton.click();
+        enterEmail();
+        enterPassword();
+        clickLogin();
     }
+
 
 }
