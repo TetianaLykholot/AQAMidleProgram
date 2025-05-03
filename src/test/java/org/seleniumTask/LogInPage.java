@@ -9,11 +9,8 @@ import java.io.IOException;
 
 public class LogInPage extends NewEraBaseTest   {
 
-    private By emailField = By.id("CustomerEmail"); // Replace with correct locator
-//    private By passwordField = By.id("CustomerPassword"); // Replace with correct locator
-    private By loginButton = By.className("login-page__sign-in-button"); // Replace with correct locator
-
-
+    private By emailField = By.id("CustomerEmail");
+    private By loginButton = By.className("login-page__sign-in-button");
 
     public void LogInPage(WebDriver driver) {
         this.driver = driver;
@@ -33,13 +30,9 @@ public class LogInPage extends NewEraBaseTest   {
         driver.findElement(loginButton).click();
     }
 
-
-
     public void login(){
         enterEmail();
         enterPassword();
         clickLogin();
     }
-
-
 }

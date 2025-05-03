@@ -14,7 +14,6 @@ public class NewEraBaseTest {
 
     protected WebDriver driver ;
 
-
     @Before
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
@@ -25,7 +24,6 @@ public class NewEraBaseTest {
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("https://www.neweracap.com/account/login");
     }
-
 
     @After
     public void tearDown() {

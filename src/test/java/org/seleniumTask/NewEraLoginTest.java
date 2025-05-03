@@ -8,12 +8,8 @@ import java.io.IOException;
 
 public class NewEraLoginTest extends LogInPage{
 
-
-
     @Test
     public void testValidLogin()  {
-        // Pass the driver from BaseTest to LoginPage
         login();
     }
-
 }
