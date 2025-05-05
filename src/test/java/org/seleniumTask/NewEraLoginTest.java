@@ -1,15 +1,18 @@
 package org.seleniumTask;
-
-import org.junit.Before;
 import org.junit.Test;
-import org.testng.annotations.BeforeTest;
 
-import java.io.IOException;
+public class NewEraLoginTest extends NewEraBaseTest {
 
-public class NewEraLoginTest extends LogInPage{
+    LogInPage loginPage = new LogInPage();
+    Products products = new Products();;
 
     @Test
     public void testValidLogin()  {
-        login();
+        loginPage.login();
+    }
+
+    @Test
+    public void addProductToBasket()  {
+        products.addToBag();
     }
 }

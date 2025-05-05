@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class LogInPage extends NewEraBaseTest   {
 
+    WebDriver driver;
+
     private By emailField = By.id("CustomerEmail");
     private By loginButton = By.className("login-page__sign-in-button");
 
