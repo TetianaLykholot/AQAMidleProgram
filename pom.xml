@@ -12,35 +12,95 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <selenium.version>4.31.0</selenium.version>
-      <testng.version>7.7.1</testng.version>
-      <junit.version>4.13.2</junit.version>
-
+    <selenium.version>4.12.0</selenium.version> <!-- Keep the latest Selenium version -->
+    <testng.version>7.11.0</testng.version>    <!-- Keep TestNG version consistent -->
+    <junit.version>4.13.2</junit.version>      <!-- JUnit 4 version -->
   </properties>
 
   <dependencies>
+    <!-- JSON Library -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20210307</version>
+    </dependency>
+
+    <!-- Rest-Assured for API Testing -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 5 API -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.12.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 4 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Jackson Databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.18.3</version>
+    </dependency>
+
+    <!-- Selenium for UI testing -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-        <version>${selenium.version}</version>
+      <version>${selenium.version}</version>
     </dependency>
+
+    <!-- Playwright for browser automation -->
+    <dependency>
+      <groupId>com.microsoft.playwright</groupId>
+      <artifactId>playwright</artifactId>
+      <version>1.51.0</version>
+    </dependency>
+
+    <!-- TestNG for test management -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Lombok for boilerplate code reduction -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.36</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Gson for JSON parsing -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.12.1</version>
+    </dependency>
+
+    <!-- WebDriverManager for Selenium -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
-      <version>5.5.3</version> <!-- Use the latest version -->
+      <version>5.5.3</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>${junit.version}</scope>
-    </dependency>
+
+    <!-- Log4j for logging -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -52,4 +112,17 @@
       <version>2.6.1</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>16</source>
+          <target>16</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
