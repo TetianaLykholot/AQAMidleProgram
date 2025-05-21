@@ -12,6 +12,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <selenium.version>4.12.0</selenium.version> <!-- Keep the latest Selenium version -->
+    <testng.version>7.11.0</testng.version>    <!-- Keep TestNG version consistent -->
+    <junit.version>4.13.2</junit.version>      <!-- JUnit 4 version -->
   </properties>
 
   <dependencies>
@@ -42,7 +45,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -57,7 +60,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.12.0</version>
+      <version>${selenium.version}</version>
     </dependency>
 
     <!-- Playwright for browser automation -->
@@ -71,7 +74,7 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.11.0</version>
+      <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -94,7 +97,19 @@
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
-      <version>5.5.0</version>
+      <version>5.5.3</version>
+    </dependency>
+
+    <!-- Log4j for logging -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.6.1</version>
     </dependency>
   </dependencies>
 
