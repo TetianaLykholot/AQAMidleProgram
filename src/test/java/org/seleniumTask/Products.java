@@ -9,7 +9,6 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 public class Products  extends NewEraBaseTest{
 
     public Products(WebDriver driver) {
-
         this.driver = driver;
     }
 

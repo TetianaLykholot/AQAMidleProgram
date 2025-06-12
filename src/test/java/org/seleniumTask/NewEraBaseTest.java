@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeTest;
 
 public class NewEraBaseTest {
 
-
     protected WebDriver driver ;
 
     @BeforeMethod
@@ -26,7 +25,6 @@ public class NewEraBaseTest {
         options.addArguments("--disable-web-security", "--allow-insecure-localhost");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
         driver.get("https://www.google.com/");
         driver.switchTo().newWindow(WindowType.WINDOW);
         LoggerUtility.info("Navigated to https://www.neweracap.com/account/login");
@@ -48,8 +46,6 @@ public class NewEraBaseTest {
     @AfterTest
     @Step("Tearing down WebDriver")
     public void tearDown() {
-        if (driver != null) {
             driver.quit();
         }
-    }
 }

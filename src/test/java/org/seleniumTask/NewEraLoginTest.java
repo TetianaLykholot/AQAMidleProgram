@@ -1,8 +1,5 @@
 package org.seleniumTask;
 import io.qameta.allure.*;
-
-import org.junit.Before;
-import org.testng.ITestListener;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -30,7 +27,7 @@ public class NewEraLoginTest extends NewEraBaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description ("Test Description: Login test with correct user name and password ")
     @Step("Step 1: Navigate to Login Page")
-    @Test(priority = 0, description = "Valid login to New Era")
+    @Test(priority = 1, description = "Valid login to New Era", testName = "Login")
     public void testValidLogin()  {
         loginPage.login();
     }
@@ -38,7 +35,7 @@ public class NewEraLoginTest extends NewEraBaseTest {
     @Description ("Test Description: Adding product to the cart ")
     @Feature("Cart Page")
     @Step("Step: add products to the bag ")
-    @Test
+    @Test(testName = "Adding to basket test")
     public void addProductToBasket()  {
         products.addToBag();
     }
