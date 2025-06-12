@@ -1,8 +1,6 @@
 package org.seleniumTask;
 
 import io.qameta.allure.Step;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,7 +45,7 @@ public class NewEraBaseTest {
         LoggerUtility.info("The test was finished ");
     }
 
-    @After
+    @AfterTest
     @Step("Tearing down WebDriver")
     public void tearDown() {
         if (driver != null) {

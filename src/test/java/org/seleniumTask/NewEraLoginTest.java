@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 
 
-@Listeners({CustomTestListener.class})
+@Listeners({com.epam.reportportal.testng.ReportPortalTestNGListener.class, CustomTestListener.class})
 public class NewEraLoginTest extends NewEraBaseTest {
 
     private LogInPage loginPage;
