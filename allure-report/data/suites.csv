@@ -1,3 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"Test Description: Login test with correct user name and password ","26","addProductToBasket","Default Suite","Fri May 30 15:21:14 CEST 2025","broken","Fri May 30 15:21:14 CEST 2025","org.seleniumTask.NewEraLoginTest","AQAMidleProgram","org.seleniumTask.NewEraLoginTest","addProductToBasket"
-"Test Description: Login test with correct user name and password ","5027","Valid login to New Era","Default Suite","Fri May 30 15:21:18 CEST 2025","passed","Fri May 30 15:21:23 CEST 2025","org.seleniumTask.NewEraLoginTest","AQAMidleProgram","org.seleniumTask.NewEraLoginTest","testValidLogin"

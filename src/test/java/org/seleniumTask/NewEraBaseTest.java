@@ -1,8 +1,6 @@
 package org.seleniumTask;
 
 import io.qameta.allure.Step;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class NewEraBaseTest {
-
 
     protected WebDriver driver ;
 
@@ -28,7 +25,6 @@ public class NewEraBaseTest {
         options.addArguments("--disable-web-security", "--allow-insecure-localhost");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
         driver.get("https://www.google.com/");
         driver.switchTo().newWindow(WindowType.WINDOW);
         LoggerUtility.info("Navigated to https://www.neweracap.com/account/login");
@@ -47,11 +43,9 @@ public class NewEraBaseTest {
         LoggerUtility.info("The test was finished ");
     }
 
-    @After
+    @AfterTest
     @Step("Tearing down WebDriver")
     public void tearDown() {
-        if (driver != null) {
             driver.quit();
         }
-    }
 }
