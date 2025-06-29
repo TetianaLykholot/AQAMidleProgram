@@ -11,42 +11,42 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class NewEraBaseTest {
-//
-//    protected WebDriver driver ;
-//
-//    @BeforeMethod
-//    @Step("Setting up WebDriver")
-//    public void setUp(){
-//        LoggerUtility.info("Starting the Selenium driver...");
-//        WebDriverManager.chromedriver().setup();
-////        System.setProperty("webdriver.chrome.driver", "/Users/VLYKHTE/Desktop/untitled folder/chromedriver-mac-arm64/chromedriver");
-//        WebDriverManager.chromedriver().driverVersion("138.0.7204.x").setup();
-//        driver = new ChromeDriver();
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-web-security", "--allow-insecure-localhost");
-//        driver = new ChromeDriver(options);
-//        driver.manage().window().maximize();
-//        driver.get("https://www.google.com/");
-//        driver.switchTo().newWindow(WindowType.WINDOW);
-//        LoggerUtility.info("Navigated to https://www.neweracap.com/account/login");
-//        driver.get("https://www.neweracap.com/account/login");
-//
-//        LoggerUtility.info("WebDriver setup complete.");
-//    }
-//
-//    @BeforeTest
-//    public void setLoggerBeforeTestWillStart(){
-//        LoggerUtility.info("Starting the test ");
-//    }
-//
-//    @AfterTest
-//    public void setLoggerAfterTestWillFinished(){
-//        LoggerUtility.info("The test was finished ");
-//    }
-//
-//    @AfterTest
-//    @Step("Tearing down WebDriver")
-//    public void tearDown() {
-//            driver.quit();
-//        }
+
+    protected WebDriver driver ;
+
+    @BeforeMethod
+    @Step("Setting up WebDriver")
+    public void setUp(){
+        LoggerUtility.info("Starting the Selenium driver...");
+        WebDriverManager.chromedriver().setup();
+       System.setProperty("webdriver.chrome.driver", "/Users/VLYKHTE/Desktop/untitled folder/chromedriver-mac-arm64/chromedriver");
+        WebDriverManager.chromedriver().driverVersion("138.0.7204.x").setup();
+        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-web-security", "--allow-insecure-localhost");
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.get("https://www.google.com/");
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        LoggerUtility.info("Navigated to https://www.neweracap.com/account/login");
+        driver.get("https://www.neweracap.com/account/login");
+
+        LoggerUtility.info("WebDriver setup complete.");
+    }
+
+    @BeforeTest
+    public void setLoggerBeforeTestWillStart(){
+        LoggerUtility.info("Starting the test ");
+    }
+
+    @AfterTest
+    public void setLoggerAfterTestWillFinished(){
+        LoggerUtility.info("The test was finished ");
+    }
+
+    @AfterTest
+    @Step("Tearing down WebDriver")
+    public void tearDown() {
+            driver.quit();
+        }
 }
