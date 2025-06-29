@@ -19,7 +19,8 @@ public class NewEraBaseTest {
     public void setUp(){
         LoggerUtility.info("Starting the Selenium driver...");
         WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "/Users/VLYKHTE/Desktop/untitled folder/chromedriver-mac-arm64/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "/Users/VLYKHTE/Desktop/untitled folder/chromedriver-mac-arm64/chromedriver");
+        WebDriverManager.chromedriver().driverVersion("138.0.7204.x").setup();
         driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-web-security", "--allow-insecure-localhost");
