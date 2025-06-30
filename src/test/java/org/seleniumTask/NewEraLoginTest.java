@@ -24,7 +24,7 @@ public class NewEraLoginTest  extends  NewEraBaseTest{
 
 
     private LogInPage loginPage;
-//    private Products products;
+    private Products products;
 
     @BeforeMethod
     public void initializePageObjects() {
@@ -32,7 +32,7 @@ public class NewEraLoginTest  extends  NewEraBaseTest{
             throw new IllegalStateException("WebDriver is not initialized. Check test setup.");
         }
         loginPage = new LogInPage(driver);
-//        products = new Products(driver);
+        products = new Products(driver);
     }
 
 
@@ -43,12 +43,12 @@ public class NewEraLoginTest  extends  NewEraBaseTest{
         Allure.step("Step 1: Open browser");
         loginPage.login();
     }
-//
-//    @Description ("Test Description: Adding product to the cart ")
-//    @Feature("Cart Page")
-//    @Step("Step: add products to the bag ")
-//    @Test(testName = "Adding to basket test")
-//    public void addProductToBasket()  {
-//        products.addToBag();
-//    }
+
+    @Description ("Test Description: Adding product to the cart ")
+    @Feature("Cart Page")
+    @Step("Step: add products to the bag ")
+    @Test(testName = "Adding to basket test")
+    public void addProductToBasket()  {
+        products.addToBag();
+    }
 }
