@@ -1,29 +1,26 @@
 package org.seleniumTask;
 
 import io.qameta.allure.Step;
+import org.aspectj.lang.annotation.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 public class NewEraBaseTest {
 
     protected WebDriver driver ;
 
-    @BeforeMethod
+    @BeforeClass
     @Step("Setting up WebDriver")
     public void setUp(){
         LoggerUtility.info("Starting the Selenium driver...");
         WebDriverManager.chromedriver().setup();
        System.setProperty("webdriver.chrome.driver", "/Users/VLYKHTE/Desktop/untitled folder/chromedriver-mac-arm64/chromedriver");
         WebDriverManager.chromedriver().driverVersion("138.0.7204.x").setup();
-        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-web-security", "--allow-insecure-localhost");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
@@ -44,7 +41,7 @@ public class NewEraBaseTest {
         LoggerUtility.info("The test was finished ");
     }
 
-    @AfterTest
+    @AfterClass
     @Step("Tearing down WebDriver")
     public void tearDown() {
             driver.quit();
