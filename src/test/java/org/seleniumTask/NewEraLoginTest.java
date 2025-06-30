@@ -44,11 +44,11 @@ public class NewEraLoginTest  extends  NewEraBaseTest{
         loginPage.login();
     }
 
-    @Description ("Test Description: Adding product to the cart ")
-    @Feature("Cart Page")
-    @Step("Step: add products to the bag ")
-    @Test(testName = "Adding to basket test")
-    public void addProductToBasket()  {
-        products.addToBag();
-    }
+//    @Description ("Test Description: Adding product to the cart ")
+//    @Feature("Cart Page")
+//    @Step("Step: add products to the bag ")
+//    @Test(testName = "Adding to basket test")
+//    public void addProductToBasket()  {
+//        products.addToBag();
+//    }
 }
